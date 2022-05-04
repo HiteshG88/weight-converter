@@ -29,24 +29,24 @@
                     <form onsubmit="event.preventDefault();" class="mb-3">
                         <div class="form-group">
                             <input
-                                id="lbsInput"
+                                id="kgInput"
                                 type="number"
                                 class="form-control-lg form-control"
-                                placeholder="Enter pounds..."
+                                placeholder="Enter kilograms..."
                             />
                         </div>
                     </form>
                     <div id="output">
                         <div class="card mb-2 bg-primary">
                             <div class="card-body">
-                                <h5>Grams:</h5>
-                                <div id="gmOutput"></div>
+                                <h5>Pounds:</h5>
+                                <div id="lbsOutput"></div>
                             </div>
                         </div>
                         <div class="card mb-2 bg-success">
                             <div class="card-body">
-                                <h5>kilograms:</h5>
-                                <div id="kgOutput"></div>
+                                <h5>Grams:</h5>
+                                <div id="gmOutput"></div>
                             </div>
                         </div>
                         <div class="card bg-danger mb-2">
@@ -62,16 +62,16 @@
         <script>
             document.getElementById("output").style.visibility = "hidden";
             document
-                .querySelector("#lbsInput")
+                .querySelector("#kgInput")
                 .addEventListener("input", (e) => {
                     document.getElementById("output").style.visibility =
                         "visible";
-                    const lbs = e.target.value;
-                    document.getElementById("gmOutput").innerHTML =
-                        lbs / 0.0022046226;
-                    document.getElementById("kgOutput").innerHTML =
-                        lbs / 2.2046226218;
-                    document.getElementById("ozOutput").innerHTML = lbs * 16;
+                    const kg = e.target.value;
+                    document.getElementById("gmOutput").innerHTML = kg / 0.001;
+                    document.getElementById("lbsOutput").innerHTML =
+                        kg / 0.45359237;
+                    document.getElementById("ozOutput").innerHTML =
+                        kg / 0.0283495231;
                 });
         </script>
     </body>
